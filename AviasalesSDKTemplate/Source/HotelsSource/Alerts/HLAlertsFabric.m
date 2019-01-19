@@ -40,7 +40,9 @@
     UIAlertAction *settings = [UIAlertAction actionWithTitle:NSLS(@"HL_LOC_NO_CURRENT_CITY_SETTINGS_BUTTON")
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {
-                                                         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                                                         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]
+                                                                                            options:@{}
+                                                                                         completionHandler:nil];
                                                      }];
     [alertController addAction:settings];
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];

@@ -7,7 +7,7 @@
 
 #import "JRDefines.h"
 #import <Foundation/Foundation.h>
-#import "SLLocalization.h"
+@import Smartling_i18n;
 
 NSString * const kHotelsStringsTable = @"HotelsLocalizable";
 

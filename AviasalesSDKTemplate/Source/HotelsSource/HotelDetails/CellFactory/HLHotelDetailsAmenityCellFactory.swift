@@ -27,7 +27,7 @@ class HLHotelDetailsAmenityCellFactory: HLHotelDetailsCellFactory {
         "gym" : "amenitiesFitness",
         "spa" : "spaAmenitiesIcon",
         "pets_allowed" : "amenitiesPets",
-        "swimming_pool" : "amenitiesPool",
+        "swimming.pool" : "amenitiesPool",
         "lgbt_friendly" : "gayFriendlyAmenitiesIcon",
         "medical_service" : "medicalServiceAmenitiesIcon",
         "babysitting" : "babysittingAmenitiesIcon",
@@ -44,8 +44,8 @@ class HLHotelDetailsAmenityCellFactory: HLHotelDetailsCellFactory {
         "coffee_tea" : "optionsBreakfast",
         "bathrobes" : "robeAmenitiesIcon",
         "daily_housekeeping" : "cleaningAmenitiesIcon",
-        "connecting_rooms" : "doorAmenitiesIcon",
-        "smoking_room" : "amenitiesSmoking",
+        "connecting.rooms" : "doorAmenitiesIcon",
+        "smoking.room" : "amenitiesSmoking",
         "wi-fi_in_rooms" : "amenitiesInternet",
         AmenityConst.privateBathroomKey : "amenitiesPrivateBathroom"
         ]

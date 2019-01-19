@@ -18,7 +18,7 @@ class SearchInfoBuilderStorage: NSObject {
 
     static let shared = SearchInfoBuilderStorage()
 
-    var updateCallback: (() -> ())?
+    var updateCallback: (() -> Void)?
 
     var simpleSearchInfoBuilder: JRSDKSearchInfoBuilder {
         get {

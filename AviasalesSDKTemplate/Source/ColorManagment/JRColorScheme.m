@@ -97,7 +97,7 @@
 #pragma mark - Background
 
 + (UIColor *)mainBackgroundColor {
-    return COLOR_WITH_RED(247, 247, 247);
+    return COLOR_WITH_RED(255, 255, 255);
 }
 
 + (UIColor *)lightBackgroundColor {
