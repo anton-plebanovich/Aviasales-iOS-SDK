@@ -39,9 +39,9 @@ class HLProgressView: UIView, CAAnimationDelegate {
         }
     }
 
-    var borderColor: UIColor = JRColorScheme.photoActivityIndicatorBorderColor() {
+    var jrBorderColor: UIColor = JRColorScheme.photoActivityIndicatorBorderColor() {
         didSet {
-            backgroundLayer?.strokeColor = borderColor.cgColor
+            backgroundLayer?.strokeColor = jrBorderColor.cgColor
         }
     }
 
@@ -120,7 +120,7 @@ class HLProgressView: UIView, CAAnimationDelegate {
         let path = createPath(borderRadius, startAngle: startAngle)
         backgroundLayer = CAShapeLayer()
         backgroundLayer.path = path.cgPath
-        backgroundLayer.strokeColor = borderColor.cgColor
+        backgroundLayer.strokeColor = jrBorderColor.cgColor
         backgroundLayer.fillColor = backgroundLayerColor.cgColor
         backgroundLayer.lineWidth = borderLineWidth
         backgroundLayer.strokeStart = 0.0

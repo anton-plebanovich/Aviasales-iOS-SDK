@@ -1,7 +1,6 @@
 #import "HLMapGroupDetailsCell.h"
 #import "HLVariantScrollablePhotoCell.h"
 #import "HLResultVariant.h"
-#import "AviasalesSDKTemplate-Bridging-Header.h"
 #import <PureLayout/PureLayout.h>
 
 @interface HLMapGroupDetailsCell ()
