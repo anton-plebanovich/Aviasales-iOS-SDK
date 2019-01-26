@@ -8,9 +8,9 @@
 import UIKit
 
 class BlueColorScheme: NSObject, ColorScheme {
-    var mainColor = #colorLiteral(red: 0.3019607843, green: 0.5607843137, blue: 0.8666666667, alpha: 1)
+    var mainColor = #colorLiteral(red: 0.1333333333, green: 0.4078431373, blue: 0.7333333333, alpha: 1)
     var actionColor =  #colorLiteral(red: 1, green: 0.6235294118, blue: 0, alpha: 1)
     var formTintColor =  #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-    var formBackgroundColor = #colorLiteral(red: 0.3019607843, green: 0.5607843137, blue: 0.8666666667, alpha: 1)
+    var formBackgroundColor = #colorLiteral(red: 0.1333333333, green: 0.4078431373, blue: 0.7333333333, alpha: 1)
     var formTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 }
