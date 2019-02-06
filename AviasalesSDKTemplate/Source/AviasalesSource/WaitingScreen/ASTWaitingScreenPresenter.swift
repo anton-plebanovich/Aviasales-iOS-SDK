@@ -7,6 +7,8 @@
 
 import Foundation
 
+import APExtensions
+
 protocol ASTWaitingScreenViewProtocol: NSObjectProtocol {
 
     func startAnimating()
@@ -59,6 +61,13 @@ class ASTWaitingScreenPresenter: NSObject {
         performSearch()
         AviasalesAdManager.shared.loadAdView(for: searchInfo)
         PriceCalendarManager.shared.prepareLoader(with: searchInfo)
+    }
+    
+    func handleCountryInfoTap() {
+        guard let countryName = (searchInfo.travelSegments.firstObject as? JRSDKTravelSegment)?.destinationAirport.countryName else { return }
+        guard let country = DataManager.shared.homeVM?.getCountry(englishName: countryName) else { return }
+        let vc = CountryDetailsViewController.create(country: country).wrappedIntoNavigation
+        g.topViewController?.present(vc)
     }
 
     func handleShowAdvertisement() {

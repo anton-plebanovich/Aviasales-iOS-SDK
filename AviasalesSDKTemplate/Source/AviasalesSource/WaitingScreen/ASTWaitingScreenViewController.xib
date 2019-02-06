@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ASTWaitingScreenViewController" customModule="AviasalesSDKTemplate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ASTWaitingScreenViewController" customModule="Holydaytor" customModuleProvider="target">
             <connections>
+                <outlet property="countryButton" destination="wLg-2a-xaU" id="iTQ-lJ-Nn3"/>
                 <outlet property="infoLabel" destination="zBa-xq-UQb" id="VUG-CR-Iv6"/>
                 <outlet property="planeScene" destination="rE7-nT-pch" id="tSJ-H5-FKT"/>
                 <outlet property="progressView" destination="fn8-XV-tTx" id="hl4-T4-4fV"/>
@@ -22,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fn8-XV-tTx" customClass="ProgressView" customModule="AviasalesSDKTemplate" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fn8-XV-tTx" customClass="ProgressView" customModule="Holydaytor" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="3"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -32,7 +33,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldz-tJ-D51">
                     <rect key="frame" x="0.0" y="170.5" width="375" height="326"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rE7-nT-pch" customClass="ASTWaitingScreenPlaneSceneView" customModule="AviasalesSDKTemplate" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rE7-nT-pch" customClass="ASTWaitingScreenPlaneSceneView" customModule="Holydaytor" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
@@ -63,15 +64,24 @@
                         <constraint firstAttribute="trailing" secondItem="rE7-nT-pch" secondAttribute="trailing" id="rZ8-9M-sqL"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLg-2a-xaU">
+                    <rect key="frame" x="154.5" y="11" width="66" height="30"/>
+                    <state key="normal" title="О стране"/>
+                    <connections>
+                        <action selector="onCountyInfoTap:" destination="-1" eventType="touchUpInside" id="cZ1-uM-5JS"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ldz-tJ-D51" secondAttribute="trailing" id="7iu-tI-3z1"/>
                 <constraint firstItem="ldz-tJ-D51" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FMc-e9-pkP"/>
+                <constraint firstItem="wLg-2a-xaU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H9c-42-YYo"/>
                 <constraint firstItem="ldz-tJ-D51" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NGv-eF-Jah"/>
                 <constraint firstItem="fn8-XV-tTx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Sx6-PN-gkh"/>
                 <constraint firstItem="fn8-XV-tTx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aHT-dK-Yh0"/>
                 <constraint firstAttribute="trailing" secondItem="fn8-XV-tTx" secondAttribute="trailing" id="f7V-ff-eYK"/>
+                <constraint firstItem="wLg-2a-xaU" firstAttribute="top" secondItem="fn8-XV-tTx" secondAttribute="bottom" constant="8" id="hf7-Sr-hhG"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

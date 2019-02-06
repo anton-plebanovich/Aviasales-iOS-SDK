@@ -16,6 +16,7 @@ class ASTWaitingScreenViewController: UIViewController {
     @IBOutlet weak var progressView: ProgressView!
     @IBOutlet weak var planeScene: ASTWaitingScreenPlaneSceneView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet private weak var countryButton: UIButton!
 
     init(searchInfo: JRSDKSearchInfo) {
         presenter = ASTWaitingScreenPresenter(searchInfo: searchInfo)
@@ -79,6 +80,10 @@ class ASTWaitingScreenViewController: UIViewController {
         }
 
         navigationController?.replaceTopViewController(with: viewController)
+    }
+    
+    @IBAction private func onCountyInfoTap(_ sender: UIButton) {
+        presenter.handleCountryInfoTap()
     }
 }
 
