@@ -16,6 +16,15 @@ class WaitingLongSearchCell: HLAutolayoutCollectionViewCell {
         static let clockTopOffset: CGFloat = 15
     }
 
+    private lazy var countryInfoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("О стране")
+        button.addTarget(self, action: #selector(onCountryInfoTap), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    var countryInfoAction: (() -> Void)?
     let clockImageView = UIImageView()
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
@@ -35,6 +44,8 @@ class WaitingLongSearchCell: HLAutolayoutCollectionViewCell {
         greenBackgroundView.backgroundColor = UIColor.white
         addSubview(greenBackgroundView)
 
+        addSubview(countryInfoButton)
+        
         clockImageView.image = UIImage(named: "waitingClock")
         greenBackgroundView.addSubview(clockImageView)
 
@@ -52,9 +63,12 @@ class WaitingLongSearchCell: HLAutolayoutCollectionViewCell {
 
     override func setupConstraints() {
         greenBackgroundView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0, left: 0, bottom: Consts.bottomEmptySpaceHeight, right: 0))
+        
+        countryInfoButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        countryInfoButton.autoPinEdge(toSuperviewEdge: .top, withInset: Consts.clockTopOffset)
 
         clockImageView.autoAlignAxis(toSuperviewAxis: .vertical)
-        clockImageView.autoPinEdge(toSuperviewEdge: .top, withInset: Consts.clockTopOffset)
+        clockImageView.autoPinEdge(.top, to: .bottom, of: countryInfoButton, withOffset: Consts.clockTopOffset)
         clockImageView.autoSetDimensions(to: CGSize(width: Consts.clockImageWidth, height: Consts.clockImageHeight))
 
         titleLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: Consts.leftOffset)
@@ -64,6 +78,10 @@ class WaitingLongSearchCell: HLAutolayoutCollectionViewCell {
         subtitleLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: Consts.leftOffset)
         subtitleLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: Consts.rightOffset)
         subtitleLabel.autoPinEdge(.top, to: .bottom, of: titleLabel, withOffset: Consts.subtitleTopOffset)
+    }
+    
+    @objc private func onCountryInfoTap() {
+        countryInfoAction?()
     }
 
     private class func titleText() -> String {

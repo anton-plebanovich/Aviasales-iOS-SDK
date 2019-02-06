@@ -69,7 +69,7 @@ class WaitingVC: HLCommonVC, HLVariantsManagerDelegate, HLCityInfoLoadingProtoco
 
     private func addLongSearchSection() {
         let longSearchSection = WaitingSection()
-        longSearchSection.items = [WaitingLongSearchItem()]
+        longSearchSection.items = [WaitingLongSearchItem(searchInfo: searchInfo)]
         sections.append(longSearchSection)
     }
 

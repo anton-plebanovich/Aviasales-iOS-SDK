@@ -11,5 +11,6 @@
 @interface JRHotelCardView : UIView
 
 @property (nonatomic, copy) void (^buttonAction)(void);
+@property (nonatomic, copy) void (^countryInfoButtonAction)(void);
 
 @end

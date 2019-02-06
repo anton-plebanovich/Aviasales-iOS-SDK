@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JRHotelCardView">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="268"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38X-3B-zTV">
-                    <rect key="frame" x="10" y="0.0" width="355" height="155"/>
+                    <rect key="frame" x="10" y="0.0" width="355" height="268"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSX-1c-Qst">
                             <rect key="frame" x="25" y="16" width="305" height="18"/>
@@ -36,7 +37,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIf-fW-S3C">
-                            <rect key="frame" x="25" y="95" width="305" height="45"/>
+                            <rect key="frame" x="25" y="155" width="305" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="V0j-UT-SFc"/>
                             </constraints>
@@ -46,18 +47,32 @@
                                 <action selector="actionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="b7g-lV-6Mi"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-iI-3lN">
+                            <rect key="frame" x="25" y="208" width="305" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="uFd-ev-JjJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="О стране"/>
+                            <connections>
+                                <action selector="onCityInfoTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="yp6-ng-fae"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="iIf-fW-S3C" secondAttribute="trailing" constant="25" id="HY2-eh-EKn"/>
                         <constraint firstItem="bDa-v4-l4R" firstAttribute="leading" secondItem="38X-3B-zTV" secondAttribute="leading" constant="25" id="Idp-vp-uXb"/>
+                        <constraint firstAttribute="bottom" secondItem="JvD-iI-3lN" secondAttribute="bottom" constant="15" id="IkG-lj-nzM"/>
                         <constraint firstItem="iIf-fW-S3C" firstAttribute="leading" secondItem="38X-3B-zTV" secondAttribute="leading" constant="25" id="LvB-JH-ygn"/>
                         <constraint firstItem="GSX-1c-Qst" firstAttribute="top" secondItem="38X-3B-zTV" secondAttribute="top" constant="16" id="M85-He-Jyr"/>
                         <constraint firstItem="bDa-v4-l4R" firstAttribute="top" secondItem="GSX-1c-Qst" secondAttribute="bottom" constant="9" id="auh-xY-bDx"/>
+                        <constraint firstItem="JvD-iI-3lN" firstAttribute="leading" secondItem="38X-3B-zTV" secondAttribute="leading" constant="25" id="boV-db-688"/>
                         <constraint firstAttribute="trailing" secondItem="GSX-1c-Qst" secondAttribute="trailing" constant="25" id="fGO-Ug-TyD"/>
+                        <constraint firstAttribute="trailing" secondItem="JvD-iI-3lN" secondAttribute="trailing" constant="25" id="itr-D0-1iW"/>
                         <constraint firstItem="GSX-1c-Qst" firstAttribute="leading" secondItem="38X-3B-zTV" secondAttribute="leading" constant="25" id="jEx-za-3aW"/>
-                        <constraint firstAttribute="bottom" secondItem="iIf-fW-S3C" secondAttribute="bottom" constant="15" id="jQs-fr-p1f"/>
                         <constraint firstAttribute="trailing" secondItem="bDa-v4-l4R" secondAttribute="trailing" constant="25" id="mom-g2-C5B"/>
+                        <constraint firstItem="JvD-iI-3lN" firstAttribute="top" secondItem="iIf-fW-S3C" secondAttribute="bottom" constant="8" id="zAo-HZ-957"/>
                     </constraints>
                 </view>
             </subviews>
@@ -75,10 +90,11 @@
             <connections>
                 <outlet property="actionButton" destination="iIf-fW-S3C" id="STo-yg-ZSb"/>
                 <outlet property="containerView" destination="38X-3B-zTV" id="Ybp-hy-tCa"/>
+                <outlet property="countryInfoButton" destination="JvD-iI-3lN" id="uih-tF-cve"/>
                 <outlet property="subtitleLabel" destination="bDa-v4-l4R" id="fLm-hl-Mso"/>
                 <outlet property="titleLabel" destination="GSX-1c-Qst" id="ZMz-QY-R7y"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="54.5"/>
+            <point key="canvasLocation" x="32.799999999999997" y="127.736131934033"/>
         </view>
     </objects>
 </document>

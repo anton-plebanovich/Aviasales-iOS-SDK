@@ -41,6 +41,13 @@ class OtherGatesItem: WaitingLoadingItem {
 }
 
 class WaitingLongSearchItem: WaitingItem {
+    
+    let searchInfo: HLSearchInfo
+    
+    init(searchInfo: HLSearchInfo) {
+        self.searchInfo = searchInfo
+    }
+    
     func accept(_ visitor: WaitingCellFactory, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         return visitor.visit(self, collectionView: collectionView, indexPath: indexPath)
     }

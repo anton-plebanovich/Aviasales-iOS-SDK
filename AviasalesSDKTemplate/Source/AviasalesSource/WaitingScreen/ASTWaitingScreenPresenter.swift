@@ -65,7 +65,7 @@ class ASTWaitingScreenPresenter: NSObject {
     
     func handleCountryInfoTap() {
         guard let countryName = (searchInfo.travelSegments.firstObject as? JRSDKTravelSegment)?.destinationAirport.countryName else { return }
-        guard let country = DataManager.shared.homeVM?.getCountry(englishName: countryName) else { return }
+        guard let country = DataManager.shared.homeVM?.getCountry(name: countryName) else { return }
         let vc = CountryDetailsViewController.create(country: country).wrappedIntoNavigation
         g.topViewController?.present(vc)
     }

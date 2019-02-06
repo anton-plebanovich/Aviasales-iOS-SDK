@@ -1,4 +1,5 @@
 import UIKit
+import APExtensions
 
 class WaitingCellFactory {
 
@@ -24,6 +25,14 @@ class WaitingCellFactory {
 
     func visit(_ item: WaitingLongSearchItem, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WaitingLongSearchCell.hl_reuseIdentifier(), for: indexPath) as! WaitingLongSearchCell
+        
+        cell.countryInfoAction = {
+            guard let countryName = item.searchInfo.city?.countryName else { return }
+            guard let country = DataManager.shared.homeVM?.getCountry(name: countryName) else { return }
+            let vc = CountryDetailsViewController.create(country: country).wrappedIntoNavigation
+            g.topViewController?.present(vc)
+        }
+        
         return cell
     }
 

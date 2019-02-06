@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
+@property (weak, nonatomic) IBOutlet UIButton *countryInfoButton;
 
 @end
 
@@ -33,7 +34,7 @@
     self.containerView.layer.cornerRadius = 6.0;
 
     [self setupLabels];
-    [self setupActionButton];
+    [self setupButtons];
 }
 
 - (void)setupLabels {
@@ -45,11 +46,15 @@
     self.subtitleLabel.textColor = [JRColorScheme darkTextColor];
 }
 
-- (void)setupActionButton {
+- (void)setupButtons {
 
     self.actionButton.layer.borderWidth = 1.0;
     self.actionButton.layer.cornerRadius = 4.0;
     self.actionButton.layer.borderColor = [JRColorScheme mainColor].CGColor;
+    
+    self.countryInfoButton.layer.borderWidth = 1.0;
+    self.countryInfoButton.layer.cornerRadius = 4.0;
+    self.countryInfoButton.layer.borderColor = [JRColorScheme mainColor].CGColor;
 
     [self.actionButton setTitle:NSLS(@"JR_SEARCH_RESULTS_HOTEL_CARD_BUTTON_TITLE") forState:UIControlStateNormal];
 }
@@ -60,6 +65,12 @@
 
     if (self.buttonAction) {
         self.buttonAction();
+    }
+}
+    
+- (IBAction)onCityInfoTapped:(UIButton *)sender {
+    if (self.countryInfoButtonAction) {
+        self.countryInfoButtonAction();
     }
 }
 

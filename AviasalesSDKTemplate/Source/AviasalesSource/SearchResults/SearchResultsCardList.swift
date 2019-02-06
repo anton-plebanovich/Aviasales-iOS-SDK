@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import APExtensions
 
 @objc protocol SearchResultsCardListActionHandler {
     func showPriceCalendarActionDidTrigger()
@@ -117,7 +118,14 @@ private extension SearchResultsCardList {
         hotelCardView.buttonAction = { [unowned self] in
             self.delegate?.findHotelsActionDidTrigger(atIndex: self.hotellookCardIndex)
         }
+        
+        hotelCardView.countryInfoButtonAction = { [unowned self] in
+            guard let countryName = (self.searchInfo.travelSegments.firstObject as? JRSDKTravelSegment)?.destinationAirport.countryName else { return }
+            guard let country = DataManager.shared.homeVM?.getCountry(name: countryName) else { return }
+            let vc = CountryDetailsViewController.create(country: country).wrappedIntoNavigation
+            g.topViewController?.present(vc)
+        }
 
-        return SearchResultsCardItem(index: hotellookCardIndex, view: hotelCardView, height: 155)
+        return SearchResultsCardItem(index: hotellookCardIndex, view: hotelCardView, height: 208)
     }
 }
