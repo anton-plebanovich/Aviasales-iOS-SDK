@@ -18,7 +18,7 @@ class WaitingLongSearchCell: HLAutolayoutCollectionViewCell {
 
     private lazy var countryInfoButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("О стране")
+        button.setTitle(NSLocalizedString("about_country_button_title", comment: ""))
         button.addTarget(self, action: #selector(onCountryInfoTap), for: .touchUpInside)
         
         return button
