@@ -9,8 +9,8 @@ class RoomsSorter: NSObject {
                 return $0.price < $1.price
             }
 
-            let firstGateIndex = gatesSortOrder?.index(of: $0.gate.gateId) ?? Int.max
-            let secondGateIndex = gatesSortOrder?.index(of: $1.gate.gateId) ?? Int.max
+            let firstGateIndex = gatesSortOrder?.firstIndex(of: $0.gate.gateId) ?? Int.max
+            let secondGateIndex = gatesSortOrder?.firstIndex(of: $1.gate.gateId) ?? Int.max
 
             return firstGateIndex < secondGateIndex
         }

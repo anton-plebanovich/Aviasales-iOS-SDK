@@ -15,7 +15,7 @@ import UIKit
     override func filterViewCellPressed(filterViewCell: RootFilterViewCell) {
         super.filterViewCellPressed(filterViewCell: filterViewCell)
 
-        if let starFilterViewCell = filterViewCell as? StarFilterViewCell, let index = allFilterCells().index(of: starFilterViewCell) {
+        if let starFilterViewCell = filterViewCell as? StarFilterViewCell, let index = allFilterCells().firstIndex(of: starFilterViewCell) {
             let star = index + 1
             if filter.stars.contains(star) {
                 filter.stars.remove(star)
@@ -37,7 +37,7 @@ import UIKit
     }
 
     override func cellShouldBeSelected(cell: RootFilterViewCell) -> Bool {
-        if let starFilterViewCell = cell as? StarFilterViewCell, let index = allFilterCells().index(of: starFilterViewCell) {
+        if let starFilterViewCell = cell as? StarFilterViewCell, let index = allFilterCells().firstIndex(of: starFilterViewCell) {
             return filter.stars.contains(index + 1)
         }
 

@@ -24,7 +24,7 @@ import Foundation
     }
 
     func hasAnyRoomWithPrice() -> Bool {
-        return variants.index(where: { variant -> Bool in
+        return variants.firstIndex(where: { variant -> Bool in
             return variant.roomWithMinPrice != nil
         }) != nil
     }

@@ -66,7 +66,7 @@ class HLHotelDetailsTripTypeCellFactory {
                 return firstItem.percentage > secondItem.percentage
             }
 
-            return sortedTripTypes.index(of: firstItem.tripType) < sortedTripTypes.index(of: secondItem.tripType)
+            return sortedTripTypes.firstIndex(of: firstItem.tripType) < sortedTripTypes.firstIndex(of: secondItem.tripType)
         })
     }
 

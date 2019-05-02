@@ -59,7 +59,7 @@ class HLIphoneHotelDetailsVC: HLHotelDetailsVC, HLPhotoScrollVCDelegate, UIViewC
     }
 
     func mapSectionRect() -> CGRect? {
-        if let section = locationSection, let mapIndex = sections.index(where: { (sect: TableSection) in sect === section }) {
+        if let section = locationSection, let mapIndex = sections.firstIndex(where: { (sect: TableSection) in sect === section }) {
             return rectForSection(mapIndex)
         }
 
@@ -67,7 +67,7 @@ class HLIphoneHotelDetailsVC: HLHotelDetailsVC, HLPhotoScrollVCDelegate, UIViewC
     }
 
     func distanceSectionRect() -> CGRect? {
-        if let section = locationSection, let distanceIndex = sections.index(where: { (sect: TableSection) in sect === section }) {
+        if let section = locationSection, let distanceIndex = sections.firstIndex(where: { (sect: TableSection) in sect === section }) {
             return rectForSection(distanceIndex)
         }
 
@@ -206,7 +206,7 @@ class HLIphoneHotelDetailsVC: HLHotelDetailsVC, HLPhotoScrollVCDelegate, UIViewC
     // MARK: - Private
 
     private func didHitMapHeader(_ point: CGPoint) -> Bool {
-        if let section = locationSection, let mapIndex = sections.index(where: { (sect: TableSection) in sect === section }) {
+        if let section = locationSection, let mapIndex = sections.firstIndex(where: { (sect: TableSection) in sect === section }) {
             return rectForHeader(mapIndex).contains(point)
         }
 
@@ -239,7 +239,7 @@ class HLIphoneHotelDetailsVC: HLHotelDetailsVC, HLPhotoScrollVCDelegate, UIViewC
 
     private func didHitExpandCell(forSection section: TableSection?, point: CGPoint) -> ExpandCell? {
         guard let section = section,
-            let ratingIndex = sections.index(where: { (sect: TableSection) in sect === section }),
+            let ratingIndex = sections.firstIndex(where: { (sect: TableSection) in sect === section }),
             let expandCell = view.hl_didHitViewOfClass(allowedClasses: [ExpandCell.self], point: point) as? ExpandCell,
             let cellIndexPath = contentTableView.indexPath(for: expandCell) else {
                 return nil

@@ -118,7 +118,7 @@ class PriceCalendarChartView: UIView {
     }
 
     fileprivate func scrollToDeparture(_ departure: JRSDKPriceCalendarDeparture, animated: Bool = true, completion: (() -> Void)? = nil) {
-        if let index = departures.index(of: departure) {
+        if let index = departures.firstIndex(of: departure) {
             collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: animated)
         }
 
@@ -129,7 +129,7 @@ class PriceCalendarChartView: UIView {
     }
 
     fileprivate func selectDeparture(_ departure: JRSDKPriceCalendarDeparture, makeVisible: Bool = false) {
-        if let index = departures.index(of: departure) {
+        if let index = departures.firstIndex(of: departure) {
             collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: false, scrollPosition: makeVisible ? .centeredHorizontally : UICollectionView.ScrollPosition())
             defineCenterCell()
             priceView.setPriceCalendarDeparture(departure)

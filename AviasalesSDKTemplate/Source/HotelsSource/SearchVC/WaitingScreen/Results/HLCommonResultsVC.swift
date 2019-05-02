@@ -250,7 +250,7 @@ class HLCommonResultsVC: HLCommonVC,
 
     private func removeItem(_ item: HLCollectionItem) {
         self.collectionView.performBatchUpdates({ () -> Void in
-            if let index = self.items.index(of: item) {
+            if let index = self.items.firstIndex(of: item) {
                 self.items.removeObject(item)
                 self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
             }
