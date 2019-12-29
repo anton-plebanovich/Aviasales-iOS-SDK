@@ -60,15 +60,17 @@ class PriceCalendarChartView: UIView {
 
         NotificationCenter.default.addObserver(self, selector: #selector(PriceCalendarChartView.managerEndLoadingNotification(_:)), name: NSNotification.Name(rawValue: JRSDKPriceCalendarLoaderEndLoadingNotification), object: nil)
 
-        priceView = PriceCalendarPriceView()
+        let priceView = PriceCalendarPriceView()
+        self.priceView = priceView
         addSubview(priceView)
         priceView.translatesAutoresizingMaskIntoConstraints = false
         addConstraint(NSLayoutConstraint(item: priceView, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
         addConstraint(NSLayoutConstraint(item: priceView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: -9.0))
         priceView.backgroundColor = UIColor.clear
-        priceView?.isHidden = !showPriceView
+        priceView.isHidden = !showPriceView
 
-        priceLevelLineView = PriceCalendarPriceLevelView()
+        let priceLevelLineView = PriceCalendarPriceLevelView()
+        self.priceLevelLineView = priceLevelLineView
         addSubview(priceLevelLineView)
         priceLevelLineView.translatesAutoresizingMaskIntoConstraints = false
         addConstraint(NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 0.0))

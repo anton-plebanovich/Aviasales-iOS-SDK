@@ -15,10 +15,12 @@ extension ConfigProviderProtocol {
     func obtainConfig() -> Config? {
         return defaultConfig()
     }
+    
+    private var resource: String {
+        return "default_config\(Locale.regionPostfix)"
+    }
 
     func defaultConfig() -> Config {
-
-        let resource = "default_config"
 
         guard let url = Bundle.main.url(forResource: resource, withExtension: "plist") else {
             fatalError("\(resource) has not found")
